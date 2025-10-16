@@ -9,7 +9,7 @@ function ManageBookings({ onBack }) {
 
   const fetchAllBookings = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/slots/all-bookings");
+      const res = await fetch("https://optiparx-backend.onrender.com/api/slots/all-bookings");
       const data = await res.json();
       setBookings(data.bookings || []);
     } catch (err) {
@@ -21,7 +21,7 @@ function ManageBookings({ onBack }) {
     if (!bookingId) return alert("Invalid booking ID");
     if (!window.confirm("Cancel this booking?")) return;
     try {
-      const res = await fetch(`http://localhost:3000/api/slots/cancel-booking/${bookingId}`, {
+      const res = await fetch(`https://optiparx-backend.onrender.com/api/slots/cancel-booking/${bookingId}`, {
         method: "DELETE",
       });
       const data = await res.json();

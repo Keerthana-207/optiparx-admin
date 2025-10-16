@@ -9,7 +9,7 @@ function AdminLogin({ onLogin }) {
     console.log("Form submitted");
 
     try {
-      const res = await fetch("http://localhost:3000/api/admin/login", {
+      const res = await fetch("https://optiparx-backend.onrender.com/api/admin/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),

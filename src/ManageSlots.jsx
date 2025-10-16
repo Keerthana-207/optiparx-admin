@@ -13,7 +13,7 @@ function ManageSlots({ onBack }) {
 
   const fetchSlotConfig = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/slots/total-slots");
+      const res = await fetch("https://optiparx-backend.onrender.com/api/slots/total-slots");
       const data = await res.json();
       setTotalSlots(data.totalSlots || 0);
       setInputSlots(data.totalSlots?.toString() || "");
@@ -26,7 +26,7 @@ function ManageSlots({ onBack }) {
 
   const fetchReservedSlots = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/slots/reserved-slots");
+      const res = await fetch("https://optiparx-backend.onrender.com/api/slots/reserved-slots");
       const data = await res.json();
       setReservedSlots(data.reservedSlots || []);
     } catch (err) {
@@ -49,7 +49,7 @@ function ManageSlots({ onBack }) {
       return;
     }
     try {
-      const res = await fetch("http://localhost:3000/api/slots/set-total-slots", {
+      const res = await fetch("https://optiparx-backend.onrender.com/api/slots/set-total-slots", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ totalSlots: slotsNum }),
