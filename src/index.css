@@ -1,0 +1,224 @@
+/* Reset defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #eafaf6;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Containers */
+.container, .admin-container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+h1, h2, h3 {
+  color: #2c7a7b;
+  margin-bottom: 20px;
+}
+
+/* Admin login */
+.login-box, .dashboard-container{
+  max-width: 400px;
+  margin: 60px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.btn-container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+/* Buttons */
+button {
+  margin-top: 15px;
+  padding: 12px;
+  background: #2c7a7b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #225e5f;
+}
+
+button.danger {
+  background: #e74c3c;
+}
+
+button.danger:hover {
+  background: #c0392b;
+}
+
+/* Tables */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.admin-table th {
+  background-color: #f0f9f7;
+  font-weight: bold;
+  color: #2c7a7b;
+}
+
+.admin-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Message Form */
+.message-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #2c7a7b;
+  background: #f0f9f7;
+  border-radius: 8px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  min-height: 80px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+/* Slot Display */
+.slot-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.admin-slot {
+  padding: 14px;
+  min-width: 100px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 6px;
+  border: 2px solid #2c7a7b;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.admin-slot:hover {
+  transform: scale(1.05);
+}
+
+.admin-slot.vacant {
+  background-color: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
+}
+
+.admin-slot.occupied {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-color: #f5c6cb;
+}
+
+/* Status Pill */
+.status-pill {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #e0f7f1;
+  color: #2c7a7b;
+}
+
+/* Booking List */
+.booking-list {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+.booking-item {
+  border-bottom: 1px solid #ccc;
+  padding: 12px 0;
+}
+
+.booking-item:last-child {
+  border-bottom: none;
+}
+
+button:disabled,
+button.danger:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  background-color: #e0e0e0; /* light gray */
+  color: #888888; /* gray text */
+  box-shadow: none;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .slot-grid {
+    flex-direction: column;
+  }
+
+  .admin-slot {
+    min-width: 100%;
+  }
+
+  .admin-table th, .admin-table td {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
